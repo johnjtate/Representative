@@ -22,7 +22,6 @@ class RepresentativeDetailViewController: UIViewController {
     
     var representative: Representative? {
         didSet {
-//            loadViewIfNeeded()
             updateView()
         }
     }
@@ -39,12 +38,15 @@ class RepresentativeDetailViewController: UIViewController {
     func updateView() {
     
         guard let representative = representative else { return }
-        nameLabel.text = representative.name
-        partyLabel.text = representative.party
-        stateLabel.text = representative.state
-        districtLabel.text = representative.district
-        officeLabel.text = representative.office
-        phoneLabel.text = representative.phone
-        linkLabel.text = representative.link
+        
+        DispatchQueue.main.async {
+            self.nameLabel.text = representative.name
+            self.partyLabel.text = representative.party
+            self.stateLabel.text = representative.state
+            self.districtLabel.text = representative.district
+            self.officeLabel.text = representative.office
+            self.phoneLabel.text = representative.phone
+            self.linkLabel.text = representative.link
+        }
     }
 }

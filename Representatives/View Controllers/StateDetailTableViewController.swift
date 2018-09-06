@@ -28,7 +28,8 @@ class StateDetailTableViewController: UITableViewController {
         
             DispatchQueue.main.async {
                 guard let queryResults = results else { return }
-                self.arrayOfReps = queryResults
+                RepresentativeController.shared.reps = queryResults
+//                self.arrayOfReps = queryResults
                 self.tableView.reloadData()
             }
         }
@@ -39,13 +40,14 @@ class StateDetailTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        
-//        return
-        return arrayOfReps.count
+        return RepresentativeController.shared.reps.count
+//        return arrayOfReps.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RepresentativeCell", for: indexPath)
-        let rep = arrayOfReps[indexPath.row]
+        let rep = RepresentativeController.shared.reps[indexPath.row]
+//        let rep = arrayOfReps[indexPath.row]
         cell.textLabel?.text = rep.name
         cell.detailTextLabel?.text = rep.district
         return cell
@@ -58,7 +60,8 @@ class StateDetailTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toRepresentativeDetail" {
             guard let detailVC = segue.destination as? RepresentativeDetailViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
-            let representative = arrayOfReps[indexPath.row]
+            let representative = RepresentativeController.shared.reps[indexPath.row]
+//            let representative = arrayOfReps[indexPath.row]
             detailVC.representative = representative
         }
     }
