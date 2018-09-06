@@ -16,7 +16,6 @@
 		87778129213DF53600B046F0 /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87778128213DF53600B046F0 /* States.swift */; };
 		8777812B213DF8B300B046F0 /* StatesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8777812A213DF8B300B046F0 /* StatesListTableViewController.swift */; };
 		8777812D213DFB5C00B046F0 /* StateDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8777812C213DFB5C00B046F0 /* StateDetailTableViewController.swift */; };
-		87778133213E0F3100B046F0 /* RepresentativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87778132213E0F3100B046F0 /* RepresentativeTableViewCell.swift */; };
 		87778135213E10D400B046F0 /* RepresentativeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87778134213E10D400B046F0 /* RepresentativeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +31,6 @@
 		87778128213DF53600B046F0 /* States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
 		8777812A213DF8B300B046F0 /* StatesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesListTableViewController.swift; sourceTree = "<group>"; };
 		8777812C213DFB5C00B046F0 /* StateDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDetailTableViewController.swift; sourceTree = "<group>"; };
-		87778132213E0F3100B046F0 /* RepresentativeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativeTableViewCell.swift; sourceTree = "<group>"; };
 		87778134213E10D400B046F0 /* RepresentativeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				87778111213DD77800B046F0 /* Main.storyboard */,
-				87778132213E0F3100B046F0 /* RepresentativeTableViewCell.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -193,7 +190,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87778133213E0F3100B046F0 /* RepresentativeTableViewCell.swift in Sources */,
 				87778129213DF53600B046F0 /* States.swift in Sources */,
 				8777810E213DD77800B046F0 /* AppDelegate.swift in Sources */,
 				87778127213DD9E600B046F0 /* RepresentativeController.swift in Sources */,

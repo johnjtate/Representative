@@ -22,7 +22,7 @@ class RepresentativeDetailViewController: UIViewController {
     
     var representative: Representative? {
         didSet {
-            loadViewIfNeeded()
+//            loadViewIfNeeded()
             updateView()
         }
     }
@@ -39,8 +39,6 @@ class RepresentativeDetailViewController: UIViewController {
     func updateView() {
     
         guard let representative = representative else { return }
-    
-    // Not sure how to populate these from the dictonary using the representative String that is passed from the table view of the representatives for the state.
         nameLabel.text = representative.name
         partyLabel.text = representative.party
         stateLabel.text = representative.state

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -62,38 +61,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepresentativeCell" id="j5p-au-xtF" customClass="RepresentativeTableViewCell" customModule="Representatives" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepresentativeCell" textLabel="gMc-o1-OWV" detailTextLabel="iYV-aU-k7K" style="IBUITableViewCellStyleValue1" id="j5p-au-xtF">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j5p-au-xtF" id="FeL-Jv-A0k">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXx-a8-djy">
-                                            <rect key="frame" x="26" y="12" width="267.5" height="21"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gMc-o1-OWV">
+                                            <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="(district)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tJ-Zg-4B0">
-                                            <rect key="frame" x="303.5" y="11" width="65.5" height="21"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iYV-aU-k7K">
+                                            <rect key="frame" x="315" y="12" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="8tJ-Zg-4B0" firstAttribute="leading" secondItem="OXx-a8-djy" secondAttribute="trailing" constant="10" id="50o-3b-sdZ"/>
-                                        <constraint firstItem="8tJ-Zg-4B0" firstAttribute="trailing" secondItem="FeL-Jv-A0k" secondAttribute="trailingMargin" constant="10" id="Zv1-eT-lNp"/>
-                                        <constraint firstItem="8tJ-Zg-4B0" firstAttribute="centerY" secondItem="FeL-Jv-A0k" secondAttribute="centerY" id="aIS-O9-T1f"/>
-                                        <constraint firstItem="OXx-a8-djy" firstAttribute="centerY" secondItem="FeL-Jv-A0k" secondAttribute="centerY" id="hyZ-Ok-yiG"/>
-                                        <constraint firstItem="OXx-a8-djy" firstAttribute="leading" secondItem="FeL-Jv-A0k" secondAttribute="leadingMargin" constant="10" id="oFn-mF-hlO"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="districtLabel" destination="8tJ-Zg-4B0" id="hqK-2r-MGV"/>
-                                    <outlet property="nameLabel" destination="OXx-a8-djy" id="DOk-rX-alx"/>
-                                    <segue destination="daa-GE-XdO" kind="show" identifier="toRepresentativeDetails" id="ouF-jy-X6S"/>
+                                    <segue destination="daa-GE-XdO" kind="show" identifier="toRepresentativeDetail" id="bat-k0-wP4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

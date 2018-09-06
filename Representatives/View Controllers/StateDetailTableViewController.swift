@@ -8,36 +8,28 @@
 
 import UIKit
 
-class StateDetailTableViewController: UITableViewController, RepresentativeTableViewCellDelegate {
+class StateDetailTableViewController: UITableViewController {
     
-    func representativeTapped(_ cell: RepresentativeTableViewCell) {
-        
-    }
-    
-
     // landing pad for segue
-    var state: String? {
-        didSet {
-            loadViewIfNeeded()
-            updateView()
-        }
-    }
+    var state: String?
+      
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateView()
 
     }
 
     var arrayOfReps: [Representative] = []
     
     func updateView() {
-        
         guard let state = state else { return }
         RepresentativeController.shared.searchRepresentatives(forState: state) { (results) in
-            
+        
             DispatchQueue.main.async {
                 guard let queryResults = results else { return }
                 self.arrayOfReps = queryResults
+                self.tableView.reloadData()
             }
         }
     }
@@ -46,16 +38,16 @@ class StateDetailTableViewController: UITableViewController, RepresentativeTable
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+       
+//        return
         return arrayOfReps.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! RepresentativeTableViewCell
-        cell.delegate = self
-        guard let rep = arrayOfReps[indexPath.row] else { return UITableViewCell() }
-        cell.nameLabel.text = rep.name
-        cell.districtLabel.text = rep.district
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RepresentativeCell", for: indexPath)
+        let rep = arrayOfReps[indexPath.row]
+        cell.textLabel?.text = rep.name
+        cell.detailTextLabel?.text = rep.district
         return cell
     }
 
@@ -64,7 +56,7 @@ class StateDetailTableViewController: UITableViewController, RepresentativeTable
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toRepresentativeDetails" {
+        if segue.identifier == "toRepresentativeDetail" {
             guard let detailVC = segue.destination as? RepresentativeDetailViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
             let representative = arrayOfReps[indexPath.row]
             detailVC.representative = representative

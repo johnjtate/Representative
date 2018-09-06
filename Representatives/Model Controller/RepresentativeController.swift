@@ -12,6 +12,8 @@ class RepresentativeController {
     
     static let shared = RepresentativeController()
     
+    var reps: [Representative] = []
+    
     private let baseURLString = "https://whoismyrepresentative.com/getall_reps_bystate.php"
     
     func searchRepresentatives(forState: String, completion: @escaping ([Representative]?) -> Void) {
@@ -51,6 +53,7 @@ class RepresentativeController {
             
             do {
                 let representatives = try JSONDecoder().decode(RepresentativeDictionary.self, from: dataAsUTF8).results
+                self.reps = representatives
                 completion(representatives)
             } catch let error {
                 print("There was an error decoding our object \(error) \(error.localizedDescription)")
